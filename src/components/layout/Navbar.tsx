@@ -33,7 +33,7 @@ export function Navbar() {
       <nav className="section-pad mx-auto flex h-16 max-w-7xl items-center justify-between md:h-20">
         <a href="#top" className="flex items-center gap-2.5">
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-ink font-display text-sm font-bold tracking-tight text-white">
-            {profile.initials}
+            <img src={profile.  image} alt={profile.name} className="h-9 w-9" />
           </span>
           <span className="font-display text-lg font-semibold tracking-tight text-ink md:text-xl">
             {profile.name}
@@ -53,7 +53,7 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <MagneticButton
             href="#contact"
             className="rounded-xl bg-ink px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-ink-soft"

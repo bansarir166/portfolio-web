@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FiArrowUpRight, FiGithub } from 'react-icons/fi'
+import { FiArrowUpRight } from 'react-icons/fi'
 import { projects, projectsMeta } from '@/data/portfolio'
 import { TiltCard } from '@/components/ui/TiltCard'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/motion'
@@ -58,7 +58,7 @@ export function Projects() {
           whileInView="visible"
           viewport={viewportOnce}
         >
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <motion.div
               key={project.title}
               variants={fadeUp()}

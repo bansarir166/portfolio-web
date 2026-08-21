@@ -3,17 +3,53 @@ import { motion } from 'framer-motion'
 import { FiMail, FiMapPin, FiSend } from 'react-icons/fi'
 import { profile } from '@/data/portfolio'
 import { SectionHeading } from '@/components/ui/SectionHeading'
-import { MagneticButton } from '@/components/ui/MagneticButton'
 import { fadeUp, viewportOnce } from '@/lib/motion'
 
 export function Contact() {
   const [sent, setSent] = useState(false)
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setSent(true)
-  }
-
+  // const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault()
+  //   setSent(true)
+  // }
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+  
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const subject = formData.get("subject");
+    const message = formData.get("message");
+  
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          subject,
+          message,
+        }),
+      });
+  
+      const data = await response.json();
+  
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to send email");
+      }
+  
+      setSent(true);
+      form.reset();
+    } catch (error) {
+      console.error("Email error:", error);
+      alert("Failed to send message. Please try again.");
+    }
+  };
   return (
     <section id="contact" className="section-pad relative py-24 md:py-32">
       <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
@@ -48,8 +84,8 @@ export function Contact() {
         </div>
 
         <motion.form
-          onSubmit={onSubmit}
-          className="rounded-2xl border border-line bg-surface p-6 md:p-8"
+  onSubmit={handleSubmit}
+            className="rounded-2xl border border-line bg-surface p-6 md:p-8"
           variants={fadeUp()}
           initial="hidden"
           whileInView="visible"
@@ -119,13 +155,13 @@ export function Contact() {
                   className="w-full resize-y rounded-md border border-line bg-bg px-3.5 py-3 text-ink outline-none transition-colors focus:border-accent"
                 />
               </label>
-              <MagneticButton
+              <button
                 type="submit"
-                className="w-full rounded-md bg-accent px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-blue-700 sm:w-auto"
+                className="w-full rounded-md flex items-center justify-center gap-2 bg-accent px-6 py-3.5 text-sm font-semibold text-white transition-colors sm:w-auto"
               >
                 Send message
                 <FiSend size={16} />
-              </MagneticButton>
+              </button>
             </div>
           )}
         </motion.form>

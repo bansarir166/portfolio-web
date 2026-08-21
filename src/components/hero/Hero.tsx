@@ -124,7 +124,7 @@ function CodeSnippet() {
       initial={{ opacity: 0, y: 16, scale: 0.94 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.55, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-      className="absolute -left-2 top-[10%] z-20 w-[9.5rem] overflow-hidden rounded-2xl bg-[#1e2430] p-3 shadow-[0_16px_40px_-18px_rgba(15,26,28,0.55)] sm:-left-3 sm:w-[10.5rem]"
+      className="absolute -left-10 top-[10%] z-20 w-[9.5rem] overflow-hidden rounded-2xl bg-[#1e2430] p-3 shadow-[0_16px_40px_-18px_rgba(15,26,28,0.55)] sm:-left-10 sm:w-[10.5rem]"
     >
       <div className="mb-2 flex items-center gap-1.5 text-[10px] text-white/55">
         <span className="font-mono">&lt;/&gt;</span>

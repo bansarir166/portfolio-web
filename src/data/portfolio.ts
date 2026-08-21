@@ -1,6 +1,7 @@
+import logo from "../assets/logo.png"
 export const profile = {
   name: 'Bansri Rakholiya',
-  initials: 'BR',
+  image: logo,
   role: 'Full Stack Web Developer',
   tagline:
     'I build scalable web applications and exceptional digital experiences using modern technologies.',
@@ -224,7 +225,7 @@ export const services = [
 export const testimonials = [
   {
     quote:
-      'Alex ships with rare clarity. Our MVP went from sketch to production in weeks — and the codebase is still a joy to work in.',
+      'Bansri ships with rare clarity. Our MVP went from sketch to production in weeks — and the codebase is still a joy to work in.',
     name: 'Maya Chen',
     title: 'Founder, Northline',
   },
