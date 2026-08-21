@@ -6,7 +6,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { fadeUp,  viewportOnce } from '@/lib/motion'
 
 export function Contact() {
-  const [sent, setSent] = useState(false)
+  const [sent,  setSent] = useState(false)
 
   // const onSubmit = (e: FormEvent<HTMLFormElement>) => {
   //   e.preventDefault()
