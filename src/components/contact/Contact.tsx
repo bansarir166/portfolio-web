@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { FiMail, FiMapPin, FiSend } from 'react-icons/fi'
 import { profile } from '@/data/portfolio'
 import { SectionHeading } from '@/components/ui/SectionHeading'
-import { fadeUp, viewportOnce } from '@/lib/motion'
+import { fadeUp,  viewportOnce } from '@/lib/motion'
 
 export function Contact() {
   const [sent, setSent] = useState(false)
