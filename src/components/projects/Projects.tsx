@@ -3,8 +3,7 @@ import { FiArrowUpRight } from 'react-icons/fi'
 import { projects, projectsMeta } from '@/data/portfolio'
 import { TiltCard } from '@/components/ui/TiltCard'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/motion'
-import vedifyImage from '@/assets/vedify.webp'
-import qoodo from '@/assets/qoodo.png'
+
 
 
 
