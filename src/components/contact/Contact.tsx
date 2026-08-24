@@ -3,10 +3,10 @@ import { motion } from 'framer-motion'
 import { FiMail, FiMapPin, FiSend } from 'react-icons/fi'
 import { profile } from '@/data/portfolio'
 import { SectionHeading } from '@/components/ui/SectionHeading'
-import { fadeUp,  viewportOnce } from '@/lib/motion'
+import { fadeUp, viewportOnce } from '@/lib/motion'
 
 export function Contact() {
-  const [sent,  setSent] = useState(false)
+  const [sent, setSent] = useState(false)
 
   // const onSubmit = (e: FormEvent<HTMLFormElement>) => {
   //   e.preventDefault()
@@ -14,15 +14,15 @@ export function Contact() {
   // }
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  
+
     const form = e.currentTarget;
     const formData = new FormData(form);
-  
+
     const name = formData.get("name");
     const email = formData.get("email");
     const subject = formData.get("subject");
     const message = formData.get("message");
-  
+
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
@@ -36,13 +36,13 @@ export function Contact() {
           message,
         }),
       });
-  
+
       const data = await response.json();
-  
+
       if (!response.ok) {
         throw new Error(data.message || "Failed to send email");
       }
-  
+
       setSent(true);
       form.reset();
     } catch (error) {
@@ -84,8 +84,8 @@ export function Contact() {
         </div>
 
         <motion.form
-  onSubmit={handleSubmit}
-            className="rounded-2xl border border-line bg-surface p-6 md:p-8"
+          onSubmit={handleSubmit}
+          className="rounded-2xl border border-line bg-surface p-6 md:p-8"
           variants={fadeUp()}
           initial="hidden"
           whileInView="visible"

@@ -4,6 +4,10 @@ import { projects, projectsMeta } from '@/data/portfolio'
 import { TiltCard } from '@/components/ui/TiltCard'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/motion'
 import vedifyImage from '@/assets/vedify.webp'
+import qoodo from '@/assets/qoodo.png'
+
+
+
 
 export function Projects() {
   return (
@@ -70,21 +74,16 @@ export function Projects() {
                     className="relative flex h-44 items-end overflow-hidden p-6 md:h-56"
                   >
                     <img
-                      src={vedifyImage}
+                      src={project.image}
                       alt=""
                       aria-hidden
                       className="absolute inset-0 h-full w-full object-fit "
                     />
                     <div
-                      className="absolute inset-0 z-0 opacity-25"
-                      style={{
-                        backgroundImage:
-                          'radial-gradient(circle at 20% 20%, white 0.6px, transparent 0.6px)',
-                        backgroundSize: '16px 16px',
-                      }}
+
                     />
-              
-             
+
+
                   </div>
 
                   <div className="flex flex-1 flex-col p-4 md:p-4">
@@ -115,7 +114,7 @@ export function Projects() {
                       >
                         Live demo <FiArrowUpRight size={15} />
                       </a>
-                    
+
                     </div>
                   </div>
                 </article>

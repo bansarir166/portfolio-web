@@ -1,4 +1,8 @@
-import logo from "../assets/logo.png"
+import logo from "../assets/logo.png";
+import qoodo from "../assets/qoodo.png";
+import lal10 from "../assets/lal10.png";
+import infra from "../assets/infra.png";
+
 export const profile = {
   name: 'Bansri Rakholiya',
   image: logo,
@@ -102,42 +106,46 @@ export const projectsMeta = {
 }
 
 export const projects = [
+
   {
-    title: 'Northline Commerce',
+    title: 'Lal10 – Manufacturing & Supply Chain Platform',
     description:
-      'A headless e-commerce platform with real-time inventory, Stripe checkout, and an admin dashboard built for high-conversion storefronts.',
-    tags: ['Next.js', 'Node.js', 'PostgreSQL', 'Stripe'],
-    live: 'https://example.com',
-    repo: 'https://github.com',
-    accent: '#2563eb',
-  },
-  {
-    title: 'Pulse Analytics',
-    description:
-      'Product analytics suite with custom event pipelines, live dashboards, and role-based access for growing SaaS teams.',
+      'Product analytics suite with custom event pipelines, live dashboards, and role-based access for growing SaaS teamsA modern, premium B2B manufacturing platform showcasing apparel, fabrics, home textiles, global sourcing, and end-to-end supply chain solutions. Designed with a clean, visual-first experience and engaging sections to highlight products, processes, statistics, and global reach .',
     tags: ['React', 'NestJS', 'Redis', 'AWS'],
-    live: 'https://example.com',
+    image: lal10,
+    live: 'https://www.lal10.com/',
     repo: 'https://github.com',
     accent: '#0f1a1c',
   },
   {
-    title: 'Forge Collab',
+    title: 'Smart quality management',
     description:
-      'Real-time collaboration workspace with presence, comments, and optimistic sync across boards and documents.',
+      'A compliance platform that pairs blockchain-backed records with AI assistance, so food-safety and workplace-standards teams can log, verify, and audit quality data without paperwork.',
     tags: ['TypeScript', 'WebSockets', 'MongoDB', 'Docker'],
-    live: 'https://example.com',
+    image: qoodo,
+    live: 'https://www.qoodo.io/',
     repo: 'https://github.com',
     accent: '#4f46e5',
   },
   {
-    title: 'Harbor Health',
+    title: 'Infratech Solution',
     description:
-      'Patient-facing portal and clinician tools with secure auth, appointment flows, and accessible UI patterns.',
-    tags: ['React', 'Express', 'PostgreSQL', 'JWT'],
-    live: 'https://example.com',
+      'A professional technology website built to present Infratech Solution’s digital services through a modern interface, smooth animations, responsive layouts, and a clean visual design focused on business growth and innovation.',
+    tags: ['Next.js', 'Node.js', 'PostgreSQL', 'Stripe'],
+    image: infra,
+    live: 'https://infratechsolution.co',
     repo: 'https://github.com',
-    accent: '#0ea5e9',
+    accent: '#2563eb',
   },
+  // {
+  //   title: 'Harbor Health',
+  //   description:
+  //     'Patient-facing portal and clinician tools with secure auth, appointment flows, and accessible UI patterns.',
+  //   tags: ['React', 'Express', 'PostgreSQL', 'JWT'],
+  //   live: 'https://example.com',
+  //   repo: 'https://github.com',
+  //   accent: '#0ea5e9',
+  // },
 ]
 
 export const experienceMeta = {
