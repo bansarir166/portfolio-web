@@ -5,11 +5,11 @@ import { experience } from '@/data/portfolio'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/motion'
 import type { IconType } from 'react-icons'
 
-const roleIcons: Record<(typeof experience)[number]['icon'], IconType> = {
+const roleIcons = {
   briefcase: FiBriefcase,
   building: HiOutlineBuildingOffice2,
   code: FiCode,
-}
+} satisfies Record<string, IconType>
 
 export function ExperienceTimeline() {
   return (
