@@ -16,6 +16,21 @@
       rel="stylesheet"
     />
     <title>Bansri Rakholiya — Full Stack Developer</title>
+    <script>
+      ;(function () {
+        if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
+        var nav = performance.getEntriesByType('navigation')[0]
+        if (!nav || nav.type !== 'reload') return
+        if (location.hash) {
+          history.replaceState(null, '', location.pathname + location.search)
+        }
+        var root = document.documentElement
+        var previous = root.style.scrollBehavior
+        root.style.scrollBehavior = 'auto'
+        scrollTo(0, 0)
+        root.style.scrollBehavior = previous
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

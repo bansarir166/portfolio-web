@@ -2,6 +2,7 @@ import logo from "../assets/logo.png";
 import qoodo from "../assets/qoodo.png";
 import lal10 from "../assets/lal10.png";
 import infra from "../assets/infra.png";
+import noura from "../assets/noura.jpg";
 
 export const profile = {
   name: 'Bansri Rakholiya',
@@ -106,7 +107,15 @@ export const projectsMeta = {
 }
 
 export const projects = [
-
+  {
+    title: 'NOURA — Premium Dry Fruits',
+    description:
+      'NOURA is a premium dry-fruit house, presented as a calm editorial storefront. Shoppers browse curated collections of almonds, pistachios, cashews, and dates, choose a pack size, and build a gift box with a live preview, a personal note, and a running total.',
+    tags: ['Next.js', 'React'],
+    image: noura,
+    live: 'https://dryfruit-web.vercel.app/',
+    accent: '#1c1917',
+  },
   {
     title: 'Lal10 – Manufacturing & Supply Chain Platform',
     description:
@@ -124,7 +133,7 @@ export const projects = [
     tags: ['TypeScript', 'WebSockets', 'MongoDB', 'Docker'],
     image: qoodo,
     live: 'https://www.qoodo.io/',
-    repo: 'https://github.com',
+    // repo: 'https://github.com',
     accent: '#4f46e5',
   },
   {
@@ -134,7 +143,7 @@ export const projects = [
     tags: ['Next.js', 'Node.js', 'PostgreSQL', 'Stripe'],
     image: infra,
     live: 'https://infratechsolution.co',
-    repo: 'https://github.com',
+    // repo: 'https://github.com',
     accent: '#2563eb',
   },
   // {
@@ -160,40 +169,40 @@ export const experienceStats = [
   { value: '3+', label: 'Years of Experience', icon: 'briefcase' },
   { value: '20+', label: 'Projects Completed', icon: 'code' },
   { value: '10+', label: 'Happy Clients', icon: 'users' },
-  { value: '4', label: 'Companies Worked', icon: 'award' },
+  { value: '3', label: 'Companies Worked', icon: 'award' },
 ] as const
 
 export const experience = [
   {
-    role: 'Senior Full Stack Developer',
-    company: 'Vertex Labs',
-    period: '2023 — Present',
-    location: 'Remote',
+    role: ' Full Stack Developer',
+    company: 'Infratech Solution',
+    period: '2023 — 2026',
+    location: 'Surat, India',
     summary:
       'Leading architecture for a multi-tenant SaaS platform. Mentoring engineers, owning API design, and shipping features that cut page load by 40%.',
     tags: ['React', 'Node.js', 'TypeScript', 'AWS', 'PostgreSQL', 'Docker'],
     icon: 'briefcase',
   },
   {
-    role: 'Full Stack Engineer',
-    company: 'Brightpath Digital',
-    period: '2020 — 2023',
-    location: 'Bengaluru, India',
+    role: 'Full Stack Developer',
+    company: 'Enacle Infotech',
+    period: '2023 — 2023',
+    location: 'Surat, India',
     summary:
       'Built customer-facing apps and internal tools end-to-end. Introduced design systems and CI pipelines that shortened release cycles.',
     tags: ['Next.js', 'Node.js', 'MongoDB', 'Tailwind CSS', 'GitHub Actions'],
     icon: 'building',
   },
-  {
-    role: 'Frontend Developer',
-    company: 'Studio Meridian',
-    period: '2018 — 2020',
-    location: 'Surat, India',
-    summary:
-      'Crafted interactive marketing sites and dashboards. Partnered closely with design to turn prototypes into production-ready React apps.',
-    tags: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'WordPress', 'Figma'],
-    icon: 'code',
-  },
+  // {
+  //   role: 'Frontend Developer',
+  //   company: 'Studio Meridian',
+  //   period: '2018 — 2020',
+  //   location: 'Surat, India',
+  //   summary:
+  //     'Crafted interactive marketing sites and dashboards. Partnered closely with design to turn prototypes into production-ready React apps.',
+  //   tags: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'WordPress', 'Figma'],
+  //   icon: 'code',
+  // },
 ] as const
 
 export const servicesMeta = {

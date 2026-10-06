@@ -65,6 +65,10 @@
     outline: 2px solid var(--color-teal);
     outline-offset: 3px;
   }
+
+  main section[id] {
+    scroll-margin-top: 5.5rem;
+  }
 }
 
 @layer utilities {

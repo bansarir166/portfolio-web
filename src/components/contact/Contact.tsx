@@ -7,49 +7,50 @@ import { fadeUp, viewportOnce } from '@/lib/motion'
 
 export function Contact() {
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
-  // const onSubmit = (e: FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault()
-  //   setSent(true)
-  // }
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault()
+    setError(null)
+    setSending(true)
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const subject = formData.get("subject");
-    const message = formData.get("message");
+    const form = e.currentTarget
+    const formData = new FormData(form)
 
     try {
-      const response = await fetch("/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name,
-          email,
-          subject,
-          message,
+          name: formData.get('name'),
+          email: formData.get('email'),
+          subject: formData.get('subject'),
+          message: formData.get('message'),
         }),
-      });
+      })
 
-      const data = await response.json();
+      const data = (await response.json().catch(() => null)) as {
+        message?: string
+      } | null
 
       if (!response.ok) {
-        throw new Error(data.message || "Failed to send email");
+        throw new Error(data?.message || 'Failed to send message. Please try again.')
       }
 
-      setSent(true);
-      form.reset();
-    } catch (error) {
-      console.error("Email error:", error);
-      alert("Failed to send message. Please try again.");
+      setSent(true)
+      form.reset()
+    } catch (err) {
+      console.error('Email error:', err)
+      setError(
+        err instanceof Error
+          ? err.message
+          : 'Failed to send message. Please try again.',
+      )
+    } finally {
+      setSending(false)
     }
-  };
+  }
   return (
     <section id="contact" className="section-pad relative py-24 md:py-32">
       <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
@@ -155,11 +156,17 @@ export function Contact() {
                   className="w-full resize-y rounded-md border border-line bg-bg px-3.5 py-3 text-ink outline-none transition-colors focus:border-accent"
                 />
               </label>
+              {error ? (
+                <p className="text-sm text-red-500" role="alert">
+                  {error}
+                </p>
+              ) : null}
               <button
                 type="submit"
-                className="w-full rounded-md flex items-center justify-center gap-2 bg-accent px-6 py-3.5 text-sm font-semibold text-white transition-colors sm:w-auto"
+                disabled={sending}
+                className="flex w-full items-center justify-center gap-2 rounded-md bg-accent px-6 py-3.5 text-sm font-semibold text-white transition-colors disabled:opacity-60 sm:w-auto"
               >
-                Send message
+                {sending ? 'Sending…' : 'Send message'}
                 <FiSend size={16} />
               </button>
             </div>
