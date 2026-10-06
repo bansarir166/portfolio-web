@@ -1,6 +1,9 @@
 import dotenv from 'dotenv'
 
 function loadEnv() {
+  // On Vercel, env vars come from the project settings. Do not let a missing
+  // local .env file overwrite them.
+  if (process.env.VERCEL) return
   dotenv.config({ override: true })
 }
 
