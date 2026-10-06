@@ -37,7 +37,7 @@ export function Footer() {
               </li>
             ))}
           </ul>
-          <ul className="flex gap-4">
+          {/* <ul className="flex gap-4">
             {socials.map(({ icon: Icon, href, label }) => (
               <li key={label}>
                 <a
@@ -51,7 +51,7 @@ export function Footer() {
                 </a>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </div>
       </div>
       <div className="section-pad mx-auto max-w-7xl border-t border-white/10 py-5 text-sm text-white/45">
